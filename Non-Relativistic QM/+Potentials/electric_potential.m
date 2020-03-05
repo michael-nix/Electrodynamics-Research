@@ -1,4 +1,4 @@
-function V = electric_potential(x,~)
+function V = electric_potential(x, ~)
 %   ELECTRIC_POTENTIAL  The electric potential centered at x = 0.
 %
 %   V = ELECTRIC_POTENTIAL(x) returns the value of the potential for any or
@@ -16,12 +16,17 @@ function V = electric_potential(x,~)
 
 V = -1./abs(x);
 
-if min(x) <= -50 && max(x) >= 50
+if min(x, [], 'all') <= -50 && max(x, [], 'all') >= 50
+    if isvector(x)
+        dx = abs(x(2) - x(1));
+    elseif ismatrix(x)
+        dx = abs(x(1, 2) - x(1));
+    end
+    
     PMLwidth = round(length(x) * 0.05);
-    dx = x(2) - x(1);
-    PMLwidth = ceil(PMLwidth * dx);
+    PMLwidth = PMLwidth * dx;
     sigma_max = log(1e8)*5 / PMLwidth^5;
-    PMLwidth = max(x) - PMLwidth;
+    PMLwidth = max(x, [], 'all') - PMLwidth;
     
     idx = abs(x) > PMLwidth;
     V(idx) = V(idx) - 1i*sigma_max*(abs(x(idx)) - PMLwidth).^4;
