@@ -29,6 +29,8 @@ How do you add decent absorbing boundary conditions so that you can pretend you'
 - A fully explicit finite difference method using second order equations,
 - A semi-implicit finite difference method using first order equations via an auxiliary differential equation.
 
+The nice thing about these methods is that the exact same files should work exactly the same in 3D (albeit quite slow and memory intensive).  Since my larger research requires absolute stability, hopefully a fully implicit method will appear soon.
+
 ## Quantum Eigenvectors
 
 ## Wave Equation
