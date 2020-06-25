@@ -3,4 +3,4 @@ This paper shows that it's possible to create a numerical model of source charge
 
 Due to the way that static .pdf files handle source code control versus how GitHub manages it, the code listed in this repository is more robust and up to date than the code given in the appendices in the paper.
 
-As a fun aside, when you're doing physics and you think you might want to do convolution in 3D, don't.  Use this code to time it out yourself if you want; but, it seems as though just simulating the dynamics of your partial differential equations through numerical integration is *significantly* faster than doing a single convolution.
+As a fun aside, when you're doing physics and you think you might want to do convolution in 3D, don't.  Use this code to time it out yourself if you want; but, it seems as though just simulating the dynamics of your partial differential equations through numerical integration is *significantly* faster than doing a single convolution.  Only use convolution to prove your point analytically!
