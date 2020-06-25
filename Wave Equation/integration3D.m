@@ -48,6 +48,7 @@ for t = 1:tmax
     end
 end
 
+% plot all of the results:
 ncells = length(plot_times) + 1;
 labels = cell(ncells, 1);
 for i = 1:(ncells - 1)
