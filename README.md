@@ -29,8 +29,10 @@ How do you add decent absorbing boundary conditions so that you can pretend you'
 - A fully explicit finite difference method using second order equations,
 - A semi-implicit finite difference method using first order equations via an auxiliary differential equation.
 
-The nice thing about these methods is that the exact same files should work exactly the same in 3D (albeit quite slow and memory intensive).  Since my larger research requires absolute stability, hopefully a fully implicit method will appear soon.
+The nice thing about these methods is that the exact same files should work exactly the same in 3D (albeit quite slow and memory intensive) because MATLAB is rad like that.  Since my larger research requires absolute stability, hopefully a fully implicit method will appear soon.  This requires a completely different approach to thinking about integrating the wave equation so there will be a quick writeup for it as well.
 
 ## Quantum Eigenvectors
+This is a terrible name for a folder but I don't want to change it.  As part of my larger work discretizing various partial differential equations, I was looking at the validity of various methods for numerical integration when the underlying solutions are necessarily complex-valued.  Turns out that the underlying eigenvectors of the system end up being the various modes of the Hamiltonian that you're simulation.  It's kinda neat.
 
 ## Wave Equation
+This is also a terrible name for a folder.  
