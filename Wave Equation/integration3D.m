@@ -1,3 +1,5 @@
+clear;
+
 % setup workspace:
 n = 128;   rmin = -20;   rmax = 20;
 
