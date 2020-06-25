@@ -55,6 +55,6 @@ for i = 1:(ncells - 1)
 end
 labels{end} = '1/(4\pir)';
 
-plot(x1D, 1/4/pi./abs(x1D), 'k--');   axis([-20 20 0 0.07]);
+plot(x1D, 1/4/pi./abs(x1D), 'k--');   axis([rmin rmax 0 0.07]);
 xlabel('x (au)');   ylabel('Scalar Potential, \phi \rightarrow 1 / 4\pir');
 legend(labels);
