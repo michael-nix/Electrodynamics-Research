@@ -1,5 +1,5 @@
 # Electrodynamics Research
-The default location for my personal research that's more or less ready for outside consumption.  Right now this consists of four main topics, each updated more or less manually as sections are completed.  I've chosen to put this on GitHub as while it's a terrible place to demonstrate the math behind all of this stuff, it's a great place to share code; and, some of what I've done in the code is relevant beyond my personal interests.  Where possible or where I was interested enough to type it up, I've included with each topic a longer form paper describing the math / physics / theory of what's been put in code.  Hopefully some of it makes sense!
+The default location for my personal research that's more or less ready for outside consumption.  Right now this consists of four main topics, each updated manually as sections are completed.  I've chosen to put this on GitHub as while it's a terrible place to demonstrate the math behind all of this stuff, it's a great place to share code; and, some of what I've done in the code is relevant beyond my personal interests.  Where possible or where I was interested enough to type it up, I've included with each topic a longer form paper describing the math / physics / theory of what's been put in code.  Hopefully some of it makes sense!
 
 The topics so far include:
 
