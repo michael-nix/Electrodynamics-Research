@@ -20,7 +20,7 @@ There should be a separate README.md in this folder describing how things can be
 - A whole bunch of standalone electromagnetic scalar potentials, magnetic fields, helper functions, and
 - A bunch of common functions that are useful.
 
-Oh, for 2D problems, I've written a mostly optimized version of a tdma solver in C found in `tdma.c`, deep in `/+CommonFunctions/C Source Files/`.  You'll probably have to compile this one your own and place in the `/+CommonFunctions/` folder instead of whatever's in there as `tdma.mexw64`.  To compile it, please use `mex -R2018a 'CFLAGS=-mavx' tdma.c`.
+Oh, for 2D problems, I've written a mostly optimized version of a tdma solver in C found in `tdma.c`, deep in `/+CommonFunctions/C Source Files/`.  You'll probably have to compile this one your own and place in the `/+CommonFunctions/` folder instead of whatever's in there as `tdma.mexw64`.  To compile it, please use `mex -R2018a 'CFLAGS=-mavx' tdma.c` (Windows only).
 
 ## Perfectly Matched Layer
 How do you add decent absorbing boundary conditions so that you can pretend you're simulating real electromagnetic phenomenon except inside of a computer?  How do you do this when you're not solving Maxwell's equations, but wave equations for potentials and not fields?  Well look no further, 'cause some ongoing work is being done all up in this folder.  So far this includes a, "standard," analytic continuation of spatial coordinates into the complex domain, and then discretized and solved using a few different techniques:
