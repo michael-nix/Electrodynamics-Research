@@ -199,9 +199,9 @@ classdef QuantumSolver2D < QuantumSolvers
     
     methods (Access = protected, Static)
         function [lhs1, rhs1, lhs2, rhs2] = setup(qsp)
-            dt = qsp.dt / 2; dx = qsp.dx; dy = qsp.dy; n = qsp.n;
-            h_bar = qsp.h_bar; m = qsp.m; q = qsp.q;
-            nx = n(2); ny = n(1);
+            dt = qsp.dt / 2;   dx = qsp.dx;   dy = qsp.dy;   n = qsp.n;
+            h_bar = qsp.h_bar;   m = qsp.m;   q = qsp.q;
+            nx = n(2);   ny = n(1);
             
             if isa(qsp.pot, 'function_handle')
                 V = qsp.pot(sqrt(qsp.x.^2 + qsp.y.^2));
@@ -242,44 +242,6 @@ classdef QuantumSolver2D < QuantumSolvers
             rhs2(:,:,1) = a/dx^2 - b/dx/2;         % diag - 1
             rhs2(:,:,2) = 1/dt - 2*a/dx^2 + d/2;   % diag
             rhs2(:,:,3) = a/dx^2 + b/dx/2;         % diag + 1
-        end
-        
-        function g = gradient_x(f, dx)
-            g = zeros(size(f));
-            
-            g(:,1) = (f(:,2) - f(:,1)) / dx;
-            g(:,end) = (f(:,end) - f(:,end-1)) / dx;
-            
-            g(:,2:end-1) = (f(:,3:end) - f(:,1:end-2)) / (2*dx);
-        end
-        
-        function g = gradient_y(f, dy)
-            g = zeros(size(f));
-            
-            g(1,:) = (f(2,:) - f(1,:)) / dy;
-            g(end,:) = (f(end,:) - f(end-1,:)) / dy;
-            
-            g(2:end-1,:) = (f(3:end,:) - f(1:end-2,:)) / (2*dy);
-        end
-        
-        function g = divergence(fx, fy, dx)
-            g = gradient_x(fx, dx) + gradient_y(fy, dx);
-        end
-        
-        function [sigmax, sigmay] = setupPML(x, dx)
-            PMLwidth = 15;   m = 4;
-            
-            PMLwidth = PMLwidth * dx;
-            sigmax_max = log(1e4)*(m+1) / PMLwidth^(m+1);
-            PMLwidth = max(max(x)) - PMLwidth;
-            
-            sigmax = zeros(size(x));
-            idx = abs(x) > PMLwidth;
-            sigmax(idx) = sigmax_max * (abs(x(idx)) - PMLwidth).^m;
-            sigmay = sigmax.';
-            
-            sigmax = sparse(sigmax);
-            sigmay = sparse(sigmay);
         end
     end
 end
