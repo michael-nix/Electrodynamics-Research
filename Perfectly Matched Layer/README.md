@@ -1,4 +1,4 @@
-## Perfectly Matched Layer
+## Perfectly Matched Layer for a General Wave Equation
 How do you add decent absorbing boundary conditions so that you can pretend you're simulating real electromagnetic phenomenon except inside of a computer?  How do you do this when you're not solving Maxwell's equations, but wave equations for potentials and not fields?  Well look no further, 'cause some ongoing work is being done all up in this folder.  So far this includes a, "standard," analytic continuation of spatial coordinates into the complex domain, and then discretized and solved using a few different techniques:
 
 - A fully explicit finite difference method using first order equations via an auxiliary differential equation,
