@@ -16,6 +16,10 @@ pot = @harmonic_potential;
 
 want2plot = false;
 
+if ~exist('+CommonFunctions/tdma.mexw64', 'file')
+    error('You''ll need to compile the necessary MEX file from tdma.c');
+end
+
 % 2^14 @ 128 = < 40 s.
 % 2^14 @ 256 = < 270 s.
 % 2^14 @ 512 = < 1100 s.
